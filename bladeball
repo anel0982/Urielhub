@@ -1,0 +1,73 @@
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "KeySystem | Uriel Hub", HidePremium = true, IntroText = "Uriel hub", IntroEnabled = true, SaveConfig = true, ConfigFolder = "Oriontest"})
+
+OrionLib:MakeNotification({
+	Name = "Your in!",
+	Content = "Your In key system",
+	Image = "rbxassetid://4483345998",
+	Time = 4
+})
+
+OrionLib:MakeNotification({
+	Name = "Key in discord",
+	Content = "Uriel Hub",
+	Image = "rbxassetid://4483345998",
+	Time = 4
+})
+
+_G.Key = "Uriel61" -- You Put Your Key Here
+_G.KeyInput = "string"
+
+function MakeScriptHub()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/anel0982/Hhbbb/main/Yhhhh"))()
+
+end
+
+
+function CorrectKeyNotifications()
+    OrionLib:MakeNotification({
+        Name = "need Key",
+        Content = "Welcome To The Key system :D",
+        Image = "rbxassetid://4483345998",
+        Time = 4
+    })
+end
+
+function WrongKeyNotifications()
+    OrionLib:MakeNotification({
+        Name = "Not Key",
+        Content = "Not key",
+        Image = "rbxassetid://4483345998",
+        Time = 4
+    })
+end
+
+local Tab = Window:MakeTab({
+	Name = "Key Room",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Enter Key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+        _G.KeyInput = Value
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Check Key!",
+	Callback = function()
+        if _G.KeyInput == _G.Key then
+         MakeScriptHub()
+         CorrectKeyNotifications()
+     else
+        WrongKeyNotifications()
+        end
+  	end    
+})
